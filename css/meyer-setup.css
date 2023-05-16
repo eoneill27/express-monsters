@@ -1,0 +1,98 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* BOX MODEL
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+* { 
+	box-sizing: border-box;
+}
+
+
+/* IMAGES
+https://codepen.io/perpetual-education/pen/dyNemyW */
+picture {
+	display: block; /* it's inline by default for some reason */
+}
+
+picture img { /* "ALL images inside of pictures" */
+	display: block;
+	/* it's inline-block by default */
+	width: 100%;
+	height: auto;
+	/* allow it to fill parent & only set size on parent */
+}
+
+
+/* LINKS 
+https://codepen.io/perpetual-education/pen/VwPxxKg */
+a {
+	display: block;
+	text-decoration: none;
+	list-style: none;
+	color: inherit;
+	/* remove default link styles */
+	/* set links to be blocks so you can wrap thing */
+	/* inline elements can't have block elements inside! */
+}
+
+p a { /* "all links in paragraphs..." */
+	display: inline-block;
+	text-decoration: none;
+}
+
+p a:hover {
+	color: blue;
+}
+
+nav a {
+	display: inline-block;
+	text-decoration: none;
+}
+

@@ -1,0 +1,24 @@
+
+<%-include ('header.ejs')%>
+
+
+<section>
+	<inner-column>
+		<h1>Monsters</h1>
+			<ul>
+		<%
+			monsterArray.forEach(function(monster) { %>
+			<li>
+				<h2><%= monster.name%></h2>
+			</li>
+
+
+		<% })
+		%>
+			</ul>
+	</inner-column>
+</section>
+
+
+
+<%-include ('footer.ejs')%>
