@@ -4,6 +4,9 @@ const app = express();
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
 app.get('/', function(request, response) {
 	console.log("home page");
 	response.send('hello');
