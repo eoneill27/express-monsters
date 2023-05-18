@@ -1,6 +1,7 @@
 [
 	{
 		"id": "101",
+		"slug": "codey",
 		"name": "Codey",
 		"favoriteFood": "pizza",
 		"favoriteToy": "Slinky",
@@ -11,6 +12,7 @@
 	},
 	{
 		"id": "102",
+		"slug": "fragoo",
 		"name": "Fragoo",
 		"favoriteFood": "pork chops",
 		"favoriteToy": "Legos",
@@ -21,6 +23,7 @@
 	},
 	{
 		"id": "103",
+		"slug": "limabean",
 		"name": "Limabean",
 		"favoriteFood": "marzipan",
 		"favoriteToy": "marbles",
@@ -31,6 +34,7 @@
 	},
 	{
 		"id": "104",
+		"slug": "miss-reads-a-lot",
 		"name": "Miss Reads-a-Lot",
 		"favoriteFood": "fondue",
 		"favoriteToy": "Scrabble",
@@ -41,6 +45,7 @@
 	},
 	{
 		"id": "105",
+		"slug": "mr-banana",
 		"name": "Mr. Banana",
 		"favoriteFood": "pineapple upsidedown cake",
 		"favoriteToy": "Game Boy",
@@ -51,6 +56,7 @@
 	},
 	{
 		"id": "106",
+		"slug": "orangina",
 		"name": "Orangina",
 		"favoriteFood": "buttered toast",
 		"favoriteToy": "Polly Pocket",
@@ -61,6 +67,7 @@
 	},
 	{
 		"id": "107",
+		"slug": "shadow",
 		"name": "Shadow",
 		"favoriteFood": "chocolate pudding",
 		"favoriteToy": "dressup clothes",

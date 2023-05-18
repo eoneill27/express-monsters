@@ -2,14 +2,23 @@
 <%-include ('header.ejs')%>
 
 
+
 <section>
 	<inner-column>
-		<h1>Monsters</h1>
-			<ul>
+		<h1 class="heyyou-voice">Monsters</h1>
+			<ul class="monster-list">
 		<%
-			monsterArray.forEach(function(monster) { %>
+			monsterArray.forEach(function(monster) { 
+
+				let adoptedClass = "";
+				if (monster.adopted == true) {
+					adoptedClass = 'adopted';
+				} else {
+					adoptedClass = 'notAdopted';
+				}
+		%>
 			<li>
-				<h2><%= monster.name%></h2>
+				<%- include ('monster-card.ejs', {monster, adoptedClass}) %>
 			</li>
 
 

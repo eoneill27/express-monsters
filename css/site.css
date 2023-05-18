@@ -1,3 +1,68 @@
-body {
-	background-color: orange;
+/* P reset */
+@import 'meyer-setup.css';
+
+/* S etup */
+@import 'setup.css';
+
+/* S setings */
+@import 'settings.css';
+@import 'developer-styles.css';
+
+/* S tructure */
+@import 'structure.css';
+
+/* T ypography */
+@import 'typography.css';
+
+/* C omponents */
+@import 'components.css';
+
+/* S tuff (modules) */
+@import 'modules.css';
+
+/* S ections and more stuff */
+
+/* then other contextual styles */
+
+.my-fantastic-image {
+	max-width: 300px;
+	border-bottom-right-radius: 30px;
 }
+
+header nav {
+	display: flex;
+	justify-content: flex-end;
+	gap: 30px;
+	font-family: Arial;
+}
+
+.header-logo {
+	font-family: Arial;
+}
+
+.adopted {
+	color: var(--secondary);
+	font-weight: 500;
+}
+
+.notAdopted {
+	color: var(--background);
+	font-weight: 500;
+}
+
+button {
+	border: none;
+	padding: none;
+	margin: none;
+}
+
+.site-button {
+	padding: 5px 20px;
+	border-radius: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: var(--button);
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+
