@@ -1,4 +1,5 @@
 import express from 'express';
+import sass from 'sass';
 
 import monsterData from './monsters.json' assert {type: 'json'};
 

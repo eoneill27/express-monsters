@@ -1,0 +1,464 @@
+/* P reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* BOX MODEL
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+* {
+  box-sizing: border-box;
+}
+
+/* IMAGES
+https://codepen.io/perpetual-education/pen/dyNemyW */
+picture {
+  display: block; /* it's inline by default for some reason */
+}
+
+picture img { /* "ALL images inside of pictures" */
+  display: block;
+  /* it's inline-block by default */
+  width: 100%;
+  height: auto;
+  /* allow it to fill parent & only set size on parent */
+}
+
+/* LINKS 
+https://codepen.io/perpetual-education/pen/VwPxxKg */
+a {
+  display: block;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+  /* remove default link styles */
+  /* set links to be blocks so you can wrap thing */
+  /* inline elements can't have block elements inside! */
+}
+
+p a { /* "all links in paragraphs..." */
+  display: inline-block;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: blue;
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* ACCESSIBILITY */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* S etup */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+} /* https://www.paulirish.com/2012/box-sizing-border-box-ftw */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+p a {
+  display: inline;
+  color: blue;
+  text-decoration: underline;
+}
+
+picture {
+  display: block;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  display: block;
+  width: 100%;
+}
+
+/* selects for custom elements */
+:where(:not(:defined)) {
+  display: block;
+}
+
+/* S setings */
+html {
+  --black: #111111;
+  --white: #efefef;
+  --neutral-stuffs: gray;
+  --color: hsla(206, 66%, 77%, 1.00);
+  --highlight: hsla(190, 90%, 60%, 1.00);
+  --shadow: rgba(0,0,0,.8);
+  --corners: 10px; /* or whatevers */
+  --paper: #fffffe;
+  --ink: #1b2d45;
+  --button: #9cffd5;
+  --button-text: #00214d;
+  --main: #ffec9c;
+  --highlight: #fd6089; /* yellow */
+  --secondary: #fd6089; /* pink */
+  --tertiary: #9cffd5; /* turquoise */
+  --stroke: #00214d;
+  --background: #d99cff; /* purple */
+  --contrast-gray: #f2f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --black: #111111;
+    --white: #efefef;
+    --neutral-stuffs: gray;
+    --color: hsla(206, 66%, 47%, 1.00);
+    --highlight: hsla(190, 90%, 40%, 1.00);
+    --shadow: rgba(0,0,0,.8);
+    --corners: 10px; /* or whatevers */
+    --paper: hsla(217, 8%, 13%, 1.00);
+    --paper2: hsla(217, 6%, 17%, 1.00); /*bunker*/
+    --ink: hsla(0, 0%, 96%, 1.00); /*whitesmoke*/
+  }
+}
+/*
+body * {
+	border: 1px solid hsla(207, 100%, 80%, 1.00);
+	padding: 4px;
+}
+
+section:nth-of-type(odd) {
+	background-color: rgba(0,0,0,.03);
+}
+
+picture img {
+	opacity: 0;
+}
+
+picture {
+	background-color: var(--shadow);
+}*/
+/* S tructure */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* be at least a full viewport height */
+  background-color: var(--main);
+  color: var(--ink);
+}
+
+header {
+  background-color: var(--paper);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: sticky;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+header inner-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+main {
+  flex-grow: 1; /* fill up available space + push the footer down */
+  padding-top: 20px;
+}
+
+inner-column {
+  display: block;
+  width: 98%;
+  max-width: 1100px; /* could be a variable in settings */
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px 14px; /* a loose default */
+}
+
+footer {
+  background-color: var(--paper);
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+/* T ypography */
+/* Should we pull in @fonts here? */
+/* don't think you can... might have to be higher up (the top of) the food chain! */
+.heyyou-voice {
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+@media (min-width: 600px) {
+  .loud-voice {
+    font-weight: 700; /* or variable font */
+  }
+}
+.attention-voice {
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+}
+
+.info-voice {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+}
+
+.reading-voice, p, li {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.strong-voice {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+:is(.reading-voice, p) em {
+  font-style: italic;
+}
+
+:is(.reading-voice, p) strong {
+  font-weight: 700;
+}
+
+/* these would be scoped to section or to an article element */
+/* this is just a loose setting for now */
+/* or smaller group of article-like styles such as a <text-content> custom element */
+p + p {
+  margin-top: 1em;
+}
+
+h2 + p {
+  margin-top: 20px;
+}
+
+ul + p {
+  margin-top: 20px;
+}
+
+code {
+  font-family: monospace;
+  font-size: 1.1em;
+  color: green;
+}
+
+/* C omponents */
+/* buttons and icons and smaller reusable bits here */
+/* S tuff (modules) */
+monster-card {
+  background-color: var(--paper);
+  display: block;
+  /*	border: 3px solid var(--stroke);*/
+  /*	border-radius: 20px;*/
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.monster-image {
+  max-width: 400px;
+  border-radius: 25px;
+}
+
+.monster-list {
+  list-style-type: none;
+  margin-top: 40px;
+}
+
+@media (min-width: 600px) {
+  .monster-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  monster-card {
+    margin-top: 0;
+  }
+}
+@media (min-width: 900px) {
+  .monster-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+monster-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--paper);
+  /*	border-radius: 20px;*/
+  padding: 40px;
+  margin-top: 40px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+monster-detail p {
+  max-width: 35ch;
+}
+
+monster-detail .adoption-status {
+  margin-top: 40px;
+}
+
+monster-detail .site-button {
+  margin-top: 40px;
+}
+
+.detail-image {
+  max-width: 500px;
+  margin-top: 25px;
+  border-radius: 25px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.detail-text {
+  margin-top: 25px;
+}
+
+.favorites-list {
+  margin-top: 30px;
+  list-style-type: disc;
+  list-style-position: inside;
+  border: 5px solid var(--secondary);
+  background-color: var(--paper);
+  color: var(--ink);
+  border-radius: 25px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  padding: 15px;
+}
+
+@media (min-width: 900px) {
+  monster-detail {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .detail-text {
+    margin-top: 80px;
+  }
+}
+/* S ections and more stuff */
+/* then other contextual styles */
+.my-fantastic-image {
+  max-width: 300px;
+  border-bottom-right-radius: 30px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 30px;
+  font-family: Arial;
+}
+
+.header-logo {
+  font-family: Arial;
+}
+
+.adopted {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.notAdopted {
+  color: var(--background);
+  font-weight: 500;
+}
+
+button {
+  border: none;
+  padding: none;
+  margin: none;
+}
+
+.site-button {
+  padding: 5px 20px;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: var(--button);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+/*# sourceMappingURL=site-minified.css.map */

@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "nodemon": "npx nodemon",
-    "nodemon sass": "npm-run-all nodemon sass"
+    "start:express": "npx nodemon",
+    "watch:sass": "sass --watch css/site.scss css/site-minified.css",
+    "start": "npm-run-all --parallel start:express watch:sass"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +18,7 @@
     "nodemon": "^2.0.22"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.62.1"
   }
 }
