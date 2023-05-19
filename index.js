@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import sass from 'sass';
 
@@ -7,10 +10,12 @@ const app = express();
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
+const port = process.env.PORT || 1985;
+
 app.set('view engine', 'ejs');
 
-app.listen(1982, function() {
-	console.log("Server started at http://localhost:1982");
+app.listen(port, function() {
+	console.log(`Server started at http://localhost:${port}`);
 });
 
 app.use(express.static('public'));
