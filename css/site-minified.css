@@ -308,6 +308,10 @@ p + p {
   margin-top: 1em;
 }
 
+h1 + p {
+  margin-top: 30px;
+}
+
 h2 + p {
   margin-top: 20px;
 }

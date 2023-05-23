@@ -2,7 +2,8 @@
 	
 	<section>
 		<inner-column>
-			<h1 class="heyyou-voice">Monster Adoption</h1>
+			<h1 class="heyyou-voice"><%- ctx.prismic.asText(document.data.page_title) %></h1>
+			<p class="info-voice"><%- ctx.prismic.asText(document.data.page_intro) %></p>
 		</inner-column>
 	</section>
 

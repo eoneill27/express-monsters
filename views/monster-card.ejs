@@ -1,9 +1,11 @@
 <monster-card>
 	<picture class="monster-image">
-		<img src="<%= monster.portrait%>" alt="">
+		<img src="<%- monster.data.monster_image.url%>" alt="">
+
 	</picture>
-	<a class="info-voice site-button" href="/monsters/<%=monster.slug%>"><%= monster.name%></a>
-	<% if(monster.adopted == true) { %>
+	<a class="info-voice site-button" href="/monsters/<%- monster.uid %>"><%- ctx.prismic.asText(monster.data.monster_name) %></a>
+
+	<% if(monster.data.adopted == true) { %>
 	<p class="reading-voice <%=adoptedClass%>">Already adopted!</p><% } else { %>
 	<p class="reading-voice <%=adoptedClass%>">Still looking for a home</p>
 

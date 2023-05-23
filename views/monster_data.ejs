@@ -1,0 +1,40 @@
+<%-include ('header.ejs')%>
+<%
+	let adoptedClass = "";
+	if (document.data.adopted == true) {
+		adoptedClass = 'adopted';
+	} else {
+		adoptedClass = 'notAdopted';
+	}
+%>
+
+<section>
+	<inner-column>
+		<h1 class="heyyou-voice"><%- ctx.prismic.asText(document.data.monster_name) %></h1>
+		<monster-detail>
+			<div class="detail-heading-photo">
+
+				<picture class="detail-image">
+					<img src="<%- document.data.monster_image.url %>" alt="">
+				</picture>
+			</div>
+			<div class="detail-text">
+				<p class="info-voice">Hi, I'm <%- ctx.prismic.asText(document.data.monster_name) %>! I'm <%- document.data.monster_age %> years old. Here are some of my favorite things:</p>
+				<ul class="favorites-list reading-voice">
+					<li>Favorite food: <%- ctx.prismic.asText(document.data.favorite_food) %></li>
+					<li>Favorite toy: <%- ctx.prismic.asText(document.data.favorite_toy) %></li>
+					<li>Favorite animal: <%- ctx.prismic.asText(document.data.favorite_animal) %></li>
+				</ul>
+				<p class="adoption-status strong-voice">Adoption status: 
+						<% if (document.data.adopted == true) { %>
+							<span class="<%=adoptedClass%>">ADOPTED</span>
+						<% } else { %>
+							<span class="<%=adoptedClass%>">Not adopted yet</span><button class="site-button info-voice" href="">ADOPT ME</button> <% }%>
+				</p>
+			</div>
+		</monster-detail>
+
+	</inner-column>
+</section>
+
+<%-include ('footer.ejs')%>
